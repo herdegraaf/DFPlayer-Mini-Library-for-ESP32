@@ -25,8 +25,17 @@ The DFPlayer Mini is a compact and affordable MP3 player module that can be used
 - Jumper wires
 
 ## Software Requirements
-- Arduino IDE (version 1.8.x or later)
-- ESP32 board support package (version 1.0.4 or later)
+- Arduino IDE 2.0 or later (for adding DFPlayer Mini Library)
+- PlatformIO on VSCode
+- espressif esp32dev board
+```
+[env:esp32dev]
+platform = espressif32
+board = esp32dev
+framework = arduino
+lib_extra_dirs = ~/Documents/Arduino/libraries
+```
+See platformio.ini
 - [DFRobotDFPlayerMini Library](https://github.com/DFRobot/DFRobotDFPlayerMini) (for reference and usage)
 
 ## Installation
@@ -37,13 +46,6 @@ The DFPlayer Mini is a compact and affordable MP3 player module that can be used
    - Open the Arduino IDE.
    - Navigate to `Sketch > Include Library > Add .ZIP Library`.
    - Select the extracted `.zip` file and click `Open`.
-
-### Add ESP32 Support
-1. **Open Arduino IDE**.
-2. **Navigate to** `File > Preferences`.
-3. **Add the URL** `https://dl.espressif.com/dl/package_esp32_index.json` to the "Additional Boards Manager URLs" field.
-4. **Go to** `Tools > Board > Boards Manager`.
-5. **Search for** `esp32` and click `Install`.
 
 ## Example Usage
 The following example code demonstrates how to use the DFPlayer Mini library to play MP3 files on an ESP32 board. Ensure that your MP3 files are named and organized correctly on your TF card as specified below.
