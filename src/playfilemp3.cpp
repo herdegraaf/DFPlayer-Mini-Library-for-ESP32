@@ -2,7 +2,7 @@
 #include "DFRobotDFPlayerMini.h"
 
 // Define the serial port for communication with the DFPlayer Mini
-#define FPSerial Serial2
+#define FPSerial Serial2;
 
 // Create an instance of the DFPlayer Mini
 DFRobotDFPlayerMini myDFPlayer;
