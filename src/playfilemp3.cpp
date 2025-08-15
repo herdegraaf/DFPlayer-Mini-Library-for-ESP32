@@ -2,7 +2,10 @@
 #include "DFRobotDFPlayerMini.h"
 
 // Define the serial port for communication with the DFPlayer Mini
-#define FPSerial Serial2;
+#define FPSerial Serial2
+
+#define RXD2 16
+#define TXD2 17
 
 // Create an instance of the DFPlayer Mini
 DFRobotDFPlayerMini myDFPlayer;
@@ -19,7 +22,7 @@ void playSound(int soundNumber, int duration) {
 }
 
 void setup() {
-  FPSerial.begin(9600);
+  FPSerial.begin(9600, SERIAL_8N1, RXD2, TXD2);
   Serial.begin(115200);
 
   Serial.println(F("DFRobot DFPlayer Mini Demo"));
@@ -36,11 +39,12 @@ void setup() {
   Serial.println(F("DFPlayer Mini online."));
 
   myDFPlayer.volume(30); // Set volume value. From 0 to 30
+
 }
 
 void loop() {
-  // Example usage: Play sound file 1 for 5 seconds
-  playSound(2, 5);
+  // Example usage: Play sound file 1 for 22 seconds
+  playSound(1, 22);
   /*
   Important: MP3 File Organization
     Create a Folder: On your TF card (microSD card), create a folder named mp3 in the root directory.
