@@ -4,9 +4,9 @@
 // Define the serial port for communication with the DFPlayer Mini
 #define FPSerial Serial2
 
-#define RXD2 16
-#define TXD2 17
-
+#define RXD2 16 // Define the RX pin for DFPlayer Mini
+#define TXD2 17 // Define the TX pin for DFPlayer Mini
+ 
 // Create an instance of the DFPlayer Mini
 DFRobotDFPlayerMini myDFPlayer;
 
@@ -22,7 +22,7 @@ void playSound(int soundNumber, int duration) {
 }
 
 void setup() {
-  FPSerial.begin(9600, SERIAL_8N1, RXD2, TXD2);
+  FPSerial.begin(9600, SERIAL_8N1, RXD2, TXD2); // Initialize the serial port for DFPlayer Mini
   Serial.begin(115200);
 
   Serial.println(F("DFRobot DFPlayer Mini Demo"));
